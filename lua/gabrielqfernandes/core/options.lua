@@ -1,5 +1,6 @@
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.scrolloff = 999
 
 vim.o.hlsearch = false
 
@@ -25,6 +26,10 @@ vim.o.splitbelow = true
 
 vim.o.undofile = true
 vim.o.mouse = "a"
+
+vim.o.foldmethod = "expr"
+vim.o.foldlevel = 99
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
